@@ -1,0 +1,42 @@
+.App {
+  background: linear-gradient(135deg, #abd4c1, #BDBDBD, #757575);
+  max-width: 100%;
+  display: block;
+  color: #e5f6c6;
+}
+
+.App .search-header {
+  background-color: #212121;
+  font-family: 'Open Sans', sans-serif;
+  display: block;
+  padding: 20px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.App .search-form {
+  width: 100%;
+}
+
+.App .search-bar {
+  margin-bottom: 10px;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+    padding: 5px;
+  }
+}
