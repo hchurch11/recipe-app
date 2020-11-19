@@ -10,11 +10,16 @@ const Recipe = ({ title, calories, image, ingredients, portions }) => {
         <p> {Math.round(calories / portions)} cal/serving</p>
       </div>
 
-      <img className="recipe-img card-img-top" src={image} alt=" "></img>
+      <img className="recipe-img card-img-top" src={image} alt=""></img>
       <div className="ingredients-list ">
         <ol>
-          {ingredients.map((ingredients) => (
-            <li className="ingredient text-left">{ingredients.text}</li>
+          {ingredients.map((ingredients, index) => (
+            <li
+              className="ingredient text-left"
+              key={`${ingredients.text}_${index}`}
+            >
+              {ingredients.text}
+            </li>
           ))}
         </ol>
       </div>

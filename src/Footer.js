@@ -6,7 +6,8 @@ export default function Footer() {
   return (
     <div className="Footer text-center ">
       <p>
-        <a>open-sourced</a> code by Heather Church{" "}
+        <a href="https://github.com/hchurch11/recipe-app">open-sourced</a> code
+        by Heather Church{" "}
       </p>
       <p>made in React</p>
       <img src={logo} className="App-logo" alt="logo" />

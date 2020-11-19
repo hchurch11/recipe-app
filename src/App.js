@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import "./App.css";
 import Footer from "./Footer";
 import Recipe from "./Recipe";
@@ -9,18 +9,18 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("");
 
-  useEffect(() => {
-    getRecipes();
-  }, [query]);
-
-  const getRecipes = async () => {
+  const getRecipes = useCallback(async () => {
     const response = await fetch(
       `https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KEY}`
     );
     const data = await response.json();
     setRecipes(data.hits);
     console.log(data.hits);
-  };
+  }, [query]);
+
+  useEffect(() => {
+    getRecipes();
+  }, [query, getRecipes]);
 
   const updateSearch = (event) => {
     setSearch(event.target.value);
@@ -51,9 +51,9 @@ export default function App() {
         </form>
       </div>
       <div className=" grid-container">
-        {recipes.map((recipe) => (
+        {recipes.map((recipe, index) => (
           <Recipe
-            key={recipe.recipe.label}
+            key={index}
             title={recipe.recipe.label}
             calories={recipe.recipe.calories}
             image={recipe.recipe.image}
