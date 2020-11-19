@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Footer from "./Footer";
 import Recipe from "./Recipe";
-import config from "./config";
 
 export default function App() {
-  const APP_ID = config.APP_ID;
-  const APP_KEY = config.APP_KEY;
-
   // STATES
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
@@ -19,7 +15,7 @@ export default function App() {
 
   const getRecipes = async () => {
     const response = await fetch(
-      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+      `https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KEY}`
     );
     const data = await response.json();
     setRecipes(data.hits);
@@ -35,6 +31,7 @@ export default function App() {
     setQuery(search);
     setSearch("");
   };
+
   return (
     <div className="App container-fluid">
       <div className="search-header">
