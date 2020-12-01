@@ -7,7 +7,7 @@ export default function App() {
   // STATES
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("christmas");
 
   const getRecipes = useCallback(async () => {
     const response = await fetch(
@@ -42,15 +42,12 @@ export default function App() {
             value={search}
             onChange={updateSearch}
           />
-          <button
-            className="btn btn-secondary btn-block search-button"
-            type="submit"
-          >
+          <button className="btn btn-block search-button" type="submit">
             Search
           </button>
         </form>
       </div>
-      <div className=" grid-container">
+      <div className=" card-columns">
         {recipes.map((recipe, index) => (
           <Recipe
             key={index}
@@ -59,6 +56,8 @@ export default function App() {
             image={recipe.recipe.image}
             ingredients={recipe.recipe.ingredients}
             portions={recipe.recipe.yield}
+            totalTime={recipe.recipe.totalTime}
+            recipeUrl={recipe.recipe.url}
           />
         ))}
       </div>
