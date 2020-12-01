@@ -1,12 +1,12 @@
 .App {
-  background: linear-gradient(135deg, #abd4c1, #BDBDBD, #757575);
+  background-color: #a0c1b8;
   max-width: 100%;
   display: block;
   color: #f4e8c1;
 }
 
 .App .search-header {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   display: block;
   padding: 20px;
   max-width: 100%;
@@ -27,7 +27,7 @@
 
 .App .btn {
   background-color: #726a95;
-  color: #BDBDBD;
+  color: #bdbdbd;
   margin: 10px 0;
 }
 
@@ -45,27 +45,34 @@
 }
 
 .Recipe h2 {
-  font-family: 'Grand Hotel', cursive;
+  font-family: "Grand Hotel", cursive;
   font-size: 50px;
 }
 
 .Recipe h3 {
-  font-family: 'Mouse Memoirs', sans-serif;
+  font-family: "Mouse Memoirs", sans-serif;
 }
 
 .Recipe .ingredients-list {
   padding-top: 20px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .Recipe .ingredient {
   list-style-type: circle;
 }
 
+.Recipe .food-allergies {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
+
 /* FOOTER FOOTER FOOTER FOOTER */
 
 .Footer {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   display: block;
   padding: 20px;
   border-radius: 10px;

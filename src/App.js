@@ -58,6 +58,7 @@ export default function App() {
             portions={recipe.recipe.yield}
             totalTime={recipe.recipe.totalTime}
             recipeUrl={recipe.recipe.url}
+            foodAllergies={recipe.recipe.cautions}
           />
         ))}
       </div>

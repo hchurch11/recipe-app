@@ -11,27 +11,34 @@ const Recipe = ({
   totalTime,
   recipeUrl,
   key,
+  foodAllergies,
 }) => {
-  const [open, setOpen] = useState(false);
+  const [openIngredients, setOpenIngredients] = useState(false);
+  const [openAllergens, setOpenAllergens] = useState(false);
 
   return (
     <div className="Recipe text-center card" key={key}>
       <div className="recipe-info card-body">
         <h2 className="card-title">{title}</h2>
         <h3 className="font-italic">Serves: {portions}</h3>
-        <p> {Math.round(calories / portions)} cal/serving</p>
+        <p>
+          {" "}
+          {totalTime > 0 ? ` Total Time: ${totalTime} minutes |` : null}{" "}
+          {Math.round(calories / portions)} cal/serving
+        </p>
+
         <img className="recipe-img card-img-top" src={image} alt=""></img>
         <>
           <button
             className="btn btn-block"
-            onClick={() => setOpen(!open)}
-            aria-controls="fade-text"
-            aria-expanded={open}
+            onClick={() => setOpenIngredients(!openIngredients)}
+            aria-controls="collapse-text-ingredients"
+            aria-expanded={openIngredients}
           >
             Click to view Ingredients
           </button>
-          <Collapse in={open}>
-            <div id="fade-text">
+          <Collapse in={openIngredients}>
+            <div id="collapse-text-ingredients">
               <ol>
                 {ingredients.map((ingredients, index) => (
                   <li
@@ -53,9 +60,28 @@ const Recipe = ({
         >
           Go To Recipe
         </a>
-      </div>
-      <div className="card-footer">
-        <p>Total Time: {totalTime} mins</p>
+
+        <>
+          <button
+            className="btn btn-block"
+            onClick={() => setOpenAllergens(!openAllergens)}
+            aria-controls="collapse-text"
+            aria-expanded={openAllergens}
+          >
+            Click to view Allergens
+          </button>
+          <Collapse in={openAllergens}>
+            <div className="">
+              <ul className="food-allergies">
+                {foodAllergies.map((foodAllergies, index) => (
+                  <li className=" text-left" key={`${foodAllergies}_${index}`}>
+                    {foodAllergies ? foodAllergies : null}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Collapse>
+        </>
       </div>
     </div>
   );
