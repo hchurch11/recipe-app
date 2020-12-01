@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Collapse from "react-bootstrap/Collapse";
-/* import Button from "react-bootstrap/Button"; */
+import LikeButton from "./LikeButton";
 
 const Recipe = ({
   title,
@@ -82,6 +82,7 @@ const Recipe = ({
             </div>
           </Collapse>
         </>
+        <LikeButton likes={0} />
       </div>
     </div>
   );
