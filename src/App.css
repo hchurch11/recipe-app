@@ -22,11 +22,13 @@
   margin-bottom: 10px;
   border-radius: 2px;
   width: 100%;
+  height: 50px;
 }
 
 .App .btn {
   background-color: #726a95;
   color: #BDBDBD;
+  margin: 10px 0;
 }
 
 .App .card-columns {
@@ -36,7 +38,6 @@
 /* CSS FOR RECIPE.JS ... recipe "cards" */
 
 .card {
-  border: 2px solid #ffffff;
   background-color: #351f39;
   border-radius: 10px;
   padding: 1px;
