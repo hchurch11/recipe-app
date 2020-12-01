@@ -2,11 +2,10 @@
   background: linear-gradient(135deg, #abd4c1, #BDBDBD, #757575);
   max-width: 100%;
   display: block;
-  color: #e5f6c6;
+  color: #f4e8c1;
 }
 
 .App .search-header {
-  background-color: #212121;
   font-family: 'Open Sans', sans-serif;
   display: block;
   padding: 20px;
@@ -25,18 +24,74 @@
   width: 100%;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 2fr);
-  grid-gap: 20px;
-  padding: 20px;
+.App .btn {
+  background-color: #726a95;
+  color: #BDBDBD;
 }
 
-@media screen and (max-width: 767px) {
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 5px;
-    padding: 5px;
+.App .card-columns {
+  display: inline-block;
+}
+
+/* CSS FOR RECIPE.JS ... recipe "cards" */
+
+.card {
+  border: 2px solid #ffffff;
+  background-color: #351f39;
+  border-radius: 10px;
+  padding: 1px;
+  margin-top: 10px;
+}
+
+.Recipe h2 {
+  font-family: 'Grand Hotel', cursive;
+  font-size: 50px;
+}
+
+.Recipe h3 {
+  font-family: 'Mouse Memoirs', sans-serif;
+}
+
+.Recipe .ingredients-list {
+  padding-top: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Recipe .ingredient {
+  list-style-type: circle;
+}
+
+/* FOOTER FOOTER FOOTER FOOTER */
+
+.Footer {
+  font-family: 'Open Sans', sans-serif;
+  display: block;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.Footer .App-logo {
+  height: 5vmin;
+  pointer-events: none;
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.Footer .App-link {
+  text-decoration: none;
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
