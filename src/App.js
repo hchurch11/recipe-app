@@ -6,7 +6,7 @@ import Recipe from "./Recipe";
 export default function App() {
   // STATES
   const [recipes, setRecipes] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("christmas");
   const [query, setQuery] = useState("christmas");
 
   const getRecipes = useCallback(async () => {
@@ -41,13 +41,14 @@ export default function App() {
             type="text"
             value={search}
             onChange={updateSearch}
+            placeholder="search an ingredient . . . "
           />
           <button className="btn btn-block search-button" type="submit">
             Search
           </button>
         </form>
       </div>
-      <div className=" card-columns">
+      <div className="card-columns">
         {recipes.map((recipe, index) => (
           <Recipe
             key={index}
