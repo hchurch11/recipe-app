@@ -35,6 +35,7 @@
 .App .card-columns {
   display: inline-block;
   margin: 10px 50px;
+  column-count: 4;
 }
 
 /* CSS FOR RECIPE.JS ... recipe "cards" */
@@ -103,5 +104,38 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* MEDIA SCREENS */
+
+@media screen and (max-width: 1200px) {
+  .App .card-columns {
+    margin: 5px 5px;
+    column-count: 3;
+  }
+  .Recipe h2 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .App .card-columns {
+    column-count: 2;
+  }
+  .Recipe h2 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .App .card-columns {
+    column-count: auto;
+  }
+  .Recipe h2 {
+    font-size: 25px;
+  }
+  .Recipe h3 {
+    font-size: 18px;
   }
 }
