@@ -67,6 +67,7 @@ const Recipe = ({
             onClick={() => setOpenAllergens(!openAllergens)}
             aria-controls="collapse-text"
             aria-expanded={openAllergens}
+            disabled={foodAllergies.length === 0 ? true : false}
           >
             Click to view Allergens
           </button>
