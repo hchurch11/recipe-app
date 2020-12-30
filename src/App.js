@@ -6,8 +6,8 @@ import Recipe from "./Recipe";
 export default function App() {
   // STATES
   const [recipes, setRecipes] = useState([]);
-  const [search, setSearch] = useState("christmas");
-  const [query, setQuery] = useState("christmas");
+  const [search, setSearch] = useState("sparkling");
+  const [query, setQuery] = useState("sparkling");
 
   const getRecipes = useCallback(async () => {
     const response = await fetch(
